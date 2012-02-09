@@ -95,7 +95,7 @@ static FILE *open_file(const char *path)
 	FILE *f; /* file stream */
 
 	/* open and create the file if it doesn't exist already */
-	fd = open(path, O_WRONLY | O_BINARY | O_CREAT | O_EXCL,
+	fd = open(path, O_WRONLY | O_BINARY | O_CREAT | O_TRUNC,
 		       S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	if (fd < 0) {
 		fprintf(stderr, "Error creating '%s': %s\n",
